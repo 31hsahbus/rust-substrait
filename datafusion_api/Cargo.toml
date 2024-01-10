@@ -1,0 +1,47 @@
+[package]
+name = "datafusion-api"
+description = "DataFusion SQL Query Planner"
+keywords = ["datafusion", "sql", "parser", "planner"]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75.0"
+
+#[lib]
+#name = "datafusion_sql"
+#path = "src/.rs"
+
+[[bin]]
+name = "datafusion_api"
+path = "src/main.rs"
+
+[features]
+default = ["unicode_expressions"]
+unicode_expressions = []
+
+[dependencies]
+arrow = "^49.0.0"
+arrow-schema = "^49.0.0"
+datafusion = "^34.0.0"
+datafusion-common = "^34.0.0"
+datafusion-expr = "^34.0.0"
+datafusion-sql = "^34.0.0"
+datafusion-optimizer = "^34.0.0"
+log = "^0.4.20"
+sqlparser = "^0.41.0"
+datafusion-substrait = "^34.0.0"
+warp = "^0.3.6 "
+serde = { version = "1", features = ["derive"] }
+tokio = { version = "^1.35.1", features = ["full"] }
+protobuf = "^3.3.0"
+url = "^2.5.0"
+hyper = "^1.1.0"
+prost = "^0.12.3"
+substrait = "^0.22.1 "
+datafusion-proto = "^34.0.0"
+
+
+#[dev-dependencies]
+#ctor = { workspace = true }
+#env_logger = { workspace = true }
+#paste = "^1.0"
+#rstest = "0.18"[package]
